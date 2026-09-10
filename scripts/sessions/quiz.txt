@@ -1,0 +1,27 @@
+>>$ ./quiz
+
+ --- Sistema Quiz (V/F) ---
+
+1. Cadastrar Pergunta (0/10)
+2. Cadastrar jogador (0/5)
+3. Jogar
+4. Ranking
+0. Sair
+
+Escolha: <<1
+Escreva a afirmação: <<O Brasil foi descoberto em 1500
+Escreva a resposta (V/F): <<V
+
+Escolha: <<2
+Escreva o Nome do jogador: <<Luiz
+
+Escolha: <<3
+Qual Jogador irá responder?
+[1] Luiz [Disponivel]
+Afirmação 1: O Brasil foi descoberto em 1500
+<<V
+Correto!
+
+Escolha: <<4
+===== RANKING =====
+1º Luiz - 10 pontos

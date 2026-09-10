@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="484" height="645" viewBox="0 0 484 645" font-family="ui-monospace, SFMono-Regular, Consolas, monospace">
+<rect width="484" height="645" rx="10" fill="#1a1a24"/>
+<rect width="484" height="34" rx="10" fill="#2d2d3a"/>
+<rect y="24" width="484" height="10" fill="#2d2d3a"/>
+<circle cx="20" cy="17" r="6" fill="#ff5f56"/>
+<circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
+<circle cx="60" cy="17" r="6" fill="#27c93f"/>
+<text x="242.0" y="21" fill="#8b949e" font-size="12" text-anchor="middle">bash</text>
+<text font-size="14" xml:space="preserve">
+<tspan x="24.0" y="60" fill="#7ee787">$ ./quiz</tspan>
+<tspan x="24.0" y="81" fill="#e4e4e7"> </tspan>
+<tspan x="24.0" y="102" fill="#e4e4e7"> --- Sistema Quiz (V/F) ---</tspan>
+<tspan x="24.0" y="123" fill="#e4e4e7"> </tspan>
+<tspan x="24.0" y="144" fill="#e4e4e7">1. Cadastrar Pergunta (0/10)</tspan>
+<tspan x="24.0" y="165" fill="#e4e4e7">2. Cadastrar jogador (0/5)</tspan>
+<tspan x="24.0" y="186" fill="#e4e4e7">3. Jogar</tspan>
+<tspan x="24.0" y="207" fill="#e4e4e7">4. Ranking</tspan>
+<tspan x="24.0" y="228" fill="#e4e4e7">0. Sair</tspan>
+<tspan x="24.0" y="249" fill="#e4e4e7"> </tspan>
+<tspan x="24.0" y="270" fill="#e4e4e7">Escolha: </tspan><tspan x="99.6" y="270" fill="#79c0ff">1</tspan>
+<tspan x="24.0" y="291" fill="#e4e4e7">Escreva a afirmação: </tspan><tspan x="200.4" y="291" fill="#79c0ff">O Brasil foi descoberto em 1500</tspan>
+<tspan x="24.0" y="312" fill="#e4e4e7">Escreva a resposta (V/F): </tspan><tspan x="242.4" y="312" fill="#79c0ff">V</tspan>
+<tspan x="24.0" y="333" fill="#e4e4e7"> </tspan>
+<tspan x="24.0" y="354" fill="#e4e4e7">Escolha: </tspan><tspan x="99.6" y="354" fill="#79c0ff">2</tspan>
+<tspan x="24.0" y="375" fill="#e4e4e7">Escreva o Nome do jogador: </tspan><tspan x="250.8" y="375" fill="#79c0ff">Luiz</tspan>
+<tspan x="24.0" y="396" fill="#e4e4e7"> </tspan>
+<tspan x="24.0" y="417" fill="#e4e4e7">Escolha: </tspan><tspan x="99.6" y="417" fill="#79c0ff">3</tspan>
+<tspan x="24.0" y="438" fill="#e4e4e7">Qual Jogador irá responder?</tspan>
+<tspan x="24.0" y="459" fill="#e4e4e7">[1] Luiz [Disponivel]</tspan>
+<tspan x="24.0" y="480" fill="#e4e4e7">Afirmação 1: O Brasil foi descoberto em 1500</tspan>
+<tspan x="24.0" y="501" fill="#e4e4e7"></tspan><tspan x="24.0" y="501" fill="#79c0ff">V</tspan>
+<tspan x="24.0" y="522" fill="#e4e4e7">Correto!</tspan>
+<tspan x="24.0" y="543" fill="#e4e4e7"> </tspan>
+<tspan x="24.0" y="564" fill="#e4e4e7">Escolha: </tspan><tspan x="99.6" y="564" fill="#79c0ff">4</tspan>
+<tspan x="24.0" y="585" fill="#e4e4e7">===== RANKING =====</tspan>
+<tspan x="24.0" y="606" fill="#e4e4e7">1º Luiz - 10 pontos</tspan>
+</text></svg>

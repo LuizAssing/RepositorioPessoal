@@ -96,6 +96,19 @@
     padding: 24px; display: flex; flex-direction: column; transition: transform .18s ease, border-color .18s ease;
   }
   .proj:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .proj .shot {
+    display: block; width: 100%; max-height: 180px;
+    object-fit: cover; object-position: top;
+    border: 1px solid var(--border); border-radius: 8px;
+    margin-bottom: 16px; background: #1a1a24;
+  }
+  .proj a.shot-link { display: block; position: relative; }
+  .proj a.shot-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 16px; height: 60px;
+    border-radius: 0 0 8px 8px;
+    background: linear-gradient(rgba(28,34,48,0), var(--bg-card));
+  }
+  .proj a.shot-link:hover .shot { border-color: var(--accent); }
   .proj .ico { font-size: 1.6rem; margin-bottom: 12px; }
   .proj h3 { font-size: 1.1rem; margin-bottom: 8px; }
   .proj p { color: var(--text-dim); font-size: .92rem; flex: 1; }
@@ -167,12 +180,12 @@
 
   <section class="hero">
     <p class="tag">Engenharia de Software · 2º período</p>
-    <h1>Olá, eu sou o Luiz.<br />Estou construindo minha base como desenvolvedor.</h1>
+    <h1>Oi, eu sou o Luiz.</h1>
     <p class="lead">
-      Estudante de Engenharia de Software focado em desenvolvimento web. Hoje trabalho a base
-      com <strong>PHP</strong>, <strong>HTML</strong> e <strong>CSS</strong>, com o objetivo de evoluir para
-      <strong>JavaScript</strong>, <strong>SQL</strong> e <strong>Laravel</strong>. Este espaço reúne meus
-      projetos pessoais e minha evolução nos estudos.
+      Estudo Engenharia de Software e estou aprendendo desenvolvimento web. No momento estou
+      firmando a base com <strong>PHP</strong>, <strong>HTML</strong> e <strong>CSS</strong>, e aos poucos
+      indo pra <strong>JavaScript</strong>, <strong>SQL</strong> e <strong>Laravel</strong>. Aqui eu junto os
+      projetos que vou fazendo pelo caminho.
     </p>
     <div class="cta">
       <a class="btn primary" href="#projetos">Ver projetos</a>
@@ -231,38 +244,53 @@
 
   <section id="projetos" class="reveal">
     <h2>Projetos</h2>
+    <p style="color:var(--text-dim); max-width:640px; margin-top:-14px; margin-bottom:26px;">
+      Projetos de estudo, a maioria feita nas disciplinas do curso. São simples, mas
+      cada um marca uma coisa nova que aprendi.
+    </p>
     <div class="proj-grid">
 
+      <article class="proj">
+        <a class="shot-link" href="projetos/sistema-mercado-c/" title="Ver o projeto">
+          <img class="shot" src="projetos/sistema-mercado-c/demo.svg" alt="Sistema de Mercado rodando no terminal" loading="lazy" />
+        </a>
+        <div class="ico">🛒</div>
+        <h3>Sistema de Mercado</h3>
+        <p>
+          Simulação de caixa em C que fui expandindo aos poucos: cadastro de produtos,
+          controle de estoque, vendas e relatórios, com os dados salvos em arquivo. Foi
+          onde ponteiros e alocação dinâmica finalmente fizeram sentido pra mim.
+        </p>
+        <div class="stack"><span>C</span><span>Ponteiros</span><span>Arquivos</span></div>
+        <div class="links">
+          <a href="projetos/sistema-mercado-c/">Código</a>
+        </div>
+      </article>
+
+      <article class="proj">
+        <a class="shot-link" href="projetos/quiz-vf-c/" title="Ver o projeto">
+          <img class="shot" src="projetos/quiz-vf-c/demo.svg" alt="Quiz rodando no terminal" loading="lazy" />
+        </a>
+        <div class="ico">❓</div>
+        <h3>Quiz de Verdadeiro ou Falso</h3>
+        <p>
+          Jogo de quiz para terminal, em C. Dá pra cadastrar perguntas e jogadores, responder
+          e ver um ranking no final. Pratiquei structs, divisão em funções e ordenação.
+        </p>
+        <div class="stack"><span>C</span><span>Structs</span></div>
+        <div class="links">
+          <a href="projetos/quiz-vf-c/">Código</a>
+        </div>
+      </article>
+
       <article class="proj placeholder">
-        <div class="ico">🌐</div>
-        <h3>Nome do projeto</h3>
-        <p>Descreva em 1–2 frases o que o projeto faz e qual problema resolve. Substitua este card pelo seu primeiro projeto.</p>
+        <div class="ico">🚧</div>
+        <h3>Em andamento</h3>
+        <p>
+          Agora estou começando com PHP. Os próximos projetos aqui devem ser pequenas
+          páginas e um CRUD simples pra praticar o back-end.
+        </p>
         <div class="stack"><span>PHP</span><span>HTML</span><span>CSS</span></div>
-        <div class="links">
-          <a href="#">Código</a>
-          <a href="#">Demo</a>
-        </div>
-      </article>
-
-      <article class="proj placeholder">
-        <div class="ico">🧮</div>
-        <h3>Nome do projeto</h3>
-        <p>Um projeto pequeno também conta: uma calculadora, um CRUD simples, um jogo em C. Mostre o processo.</p>
-        <div class="stack"><span>C++</span></div>
-        <div class="links">
-          <a href="#">Código</a>
-        </div>
-      </article>
-
-      <article class="proj placeholder">
-        <div class="ico">📚</div>
-        <h3>Nome do projeto</h3>
-        <p>Conforme avançar, adicione projetos com JavaScript, SQL e Laravel. A ideia é a linha do tempo contar sua evolução.</p>
-        <div class="stack"><span>JavaScript</span><span>SQL</span></div>
-        <div class="links">
-          <a href="#">Código</a>
-          <a href="#">Demo</a>
-        </div>
       </article>
 
     </div>
@@ -299,7 +327,7 @@
     <p style="color:var(--text-dim);">Aberto a trocar ideias, feedback e oportunidades de estágio.</p>
     <div class="contact-links">
       <a href="https://github.com/LuizAssing" target="_blank" rel="noopener">💻 GitHub</a>
-      <a href="mailto:luiz.smartflow@gmail.com">✉️ E-mail</a>
+      <a href="mailto:luiz.r.assing@gmail.com">✉️ E-mail</a>
       <a href="#" target="_blank" rel="noopener">🔗 LinkedIn</a>
     </div>
   </section>

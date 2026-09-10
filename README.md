@@ -15,14 +15,18 @@ Estudante de Engenharia de Software (2º período), focado em desenvolvimento we
 
 ## 📂 Projetos
 
-| Projeto | Descrição | Tecnologias | Link |
-| --- | --- | --- | --- |
-| _(em breve)_ | Adicione aqui seu primeiro projeto | PHP, HTML, CSS | — |
+Projetos de estudo, a maioria feita nas disciplinas do curso.
+
+| Projeto | Sobre | Tecnologias |
+| --- | --- | --- |
+| [Sistema de Mercado](projetos/sistema-mercado-c/) | Simulação de caixa em C: produtos, estoque, vendas e relatórios com dados em arquivo | C, ponteiros, arquivos |
+| [Quiz de Verdadeiro ou Falso](projetos/quiz-vf-c/) | Jogo de quiz para terminal, em C, com cadastro de perguntas e ranking | C, structs |
+| _Em andamento_ | Começando com PHP — próximos projetos serão páginas e um CRUD simples | PHP, HTML, CSS |
 
 ## 📫 Contato
 
 - GitHub: [@LuizAssing](https://github.com/LuizAssing)
-- E-mail: luiz.smartflow@gmail.com
+- E-mail: luiz.r.assing@gmail.com
 
 ---
 

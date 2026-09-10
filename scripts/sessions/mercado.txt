@@ -1,0 +1,36 @@
+>>$ ./mercado
+================================
+         Super Muffatão
+================================
+1 - Abrir Caixa
+2 - Cadastro de Produtos
+3 - Realizar venda
+4 - Relatorio de Vendas
+7 - Fechar caixa
+8 - Sair
+<<2
+Tipo (1 - Mercado / 2 - Padaria): <<1
+Nome do produto: <<Arroz 5kg
+Quantidade em estoque: <<30
+Preco: <<25
+Produto cadastrado!
+
+<<1
+Selecione o valor para abrir o caixa: <<100
+O caixa foi aberto com o valor de: 100,00
+
+<<3
+=== PRODUTOS DISPONIVEIS ===
+ID   Nome            Tipo      Estq     Preco
+1    Arroz 5kg       Mercado    30      R$25,00
+Qual o Id do produto: <<1
+Quantidade: <<2
+Total da compra: R$50,00
+
+<<4
+=== RELATORIO DE VENDAS ===
+ID   Produto        Qtd      Total
+1    Arroz 5kg       2       R$50,00
+Abertura:                    R$100,00
+Vendas:                      R$50,00
+Total:                       R$150,00
