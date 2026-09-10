@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Portfólio de Luiz Assing — estudante de Engenharia de Software. Projetos pessoais em PHP, HTML, CSS, JavaScript e Laravel." />
+<meta name="author" content="Luiz Assing" />
+<meta property="og:title" content="Luiz Assing — Portfólio" />
+<meta property="og:description" content="Estudante de Engenharia de Software. Projetos pessoais em PHP, HTML, CSS, JavaScript e Laravel." />
+<meta property="og:type" content="website" />
+<title>Luiz Assing — Portfólio</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-soft: #161b22;
+    --bg-card: #1c2230;
+    --border: #2b3444;
+    --text: #e6edf3;
+    --text-dim: #9aa7b4;
+    --accent: #6ea8fe;
+    --accent-2: #7ee787;
+    --radius: 14px;
+    --max: 1040px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; border-top: 1px solid var(--border); }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2::before { content: ""; width: 22px; height: 3px; background: var(--accent); border-radius: 3px; }
+
+  /* NAV */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(13,17,23,.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  nav .brand { font-weight: 700; letter-spacing: .5px; }
+  nav ul { display: flex; gap: 22px; list-style: none; }
+  nav ul a { color: var(--text-dim); font-size: .92rem; }
+  nav ul a:hover { color: var(--text); text-decoration: none; }
+  .menu-btn { display: none; background: none; border: 0; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+  /* HERO */
+  .hero { padding: 96px 0 84px; border-top: 0; }
+  .hero .tag { color: var(--accent-2); font-size: .9rem; letter-spacing: 1px; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: 14px 0 18px; }
+  .hero p.lead { font-size: 1.1rem; color: var(--text-dim); max-width: 620px; }
+  .cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 22px; border-radius: 10px;
+    font-weight: 600; font-size: .95rem; border: 1px solid var(--border);
+  }
+  .btn.primary { background: var(--accent); color: #0d1117; border-color: var(--accent); }
+  .btn.primary:hover { filter: brightness(1.08); text-decoration: none; }
+  .btn.ghost:hover { border-color: var(--accent); text-decoration: none; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .fact-list { list-style: none; display: grid; gap: 10px; }
+  .fact-list li { padding-left: 26px; position: relative; color: var(--text-dim); }
+  .fact-list li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+
+  /* SKILLS */
+  .skills-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .skill-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+  .skill-card h3 { font-size: 1rem; margin-bottom: 14px; }
+  .skill-card h3 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; }
+  .dot.now { background: var(--accent-2); }
+  .dot.next { background: var(--accent); }
+  .dot.base { background: #d29922; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; font-size: .85rem; color: var(--text-dim); }
+
+  /* PROJECTS */
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .proj {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px; display: flex; flex-direction: column; transition: transform .18s ease, border-color .18s ease;
+  }
+  .proj:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .proj .ico { font-size: 1.6rem; margin-bottom: 12px; }
+  .proj h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .proj p { color: var(--text-dim); font-size: .92rem; flex: 1; }
+  .proj .stack { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .proj .stack span { font-size: .78rem; color: var(--accent); background: rgba(110,168,254,.1); padding: 3px 9px; border-radius: 6px; }
+  .proj .links { margin-top: 16px; display: flex; gap: 16px; font-size: .88rem; }
+  .proj.placeholder { border-style: dashed; opacity: .75; }
+
+  /* TIMELINE */
+  .timeline { border-left: 2px solid var(--border); margin-left: 6px; }
+  .timeline li { list-style: none; position: relative; padding: 0 0 26px 26px; }
+  .timeline li::before {
+    content: ""; position: absolute; left: -7px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg);
+  }
+  .timeline .when { font-size: .82rem; color: var(--accent-2); letter-spacing: .5px; }
+  .timeline h3 { font-size: 1rem; margin: 2px 0 4px; }
+  .timeline p { color: var(--text-dim); font-size: .9rem; }
+
+  /* CONTACT */
+  .contact-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+  .contact-links a {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    padding: 12px 18px; border-radius: 10px; color: var(--text);
+  }
+  .contact-links a:hover { border-color: var(--accent); text-decoration: none; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; color: var(--text-dim); font-size: .85rem; }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+  @media (max-width: 700px) {
+    nav ul {
+      position: absolute; top: 64px; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: var(--bg-soft); border-bottom: 1px solid var(--border);
+      display: none;
+    }
+    nav ul.open { display: flex; }
+    nav ul li { border-top: 1px solid var(--border); }
+    nav ul a { display: block; padding: 14px 24px; }
+    .menu-btn { display: block; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <span class="brand">Luiz Assing</span>
+      <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <ul id="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#jornada">Jornada</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="tag">Engenharia de Software · 2º período</p>
+    <h1>Olá, eu sou o Luiz.<br />Estou construindo minha base como desenvolvedor.</h1>
+    <p class="lead">
+      Estudante de Engenharia de Software focado em desenvolvimento web. Hoje trabalho a base
+      com <strong>PHP</strong>, <strong>HTML</strong> e <strong>CSS</strong>, com o objetivo de evoluir para
+      <strong>JavaScript</strong>, <strong>SQL</strong> e <strong>Laravel</strong>. Este espaço reúne meus
+      projetos pessoais e minha evolução nos estudos.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="#projetos">Ver projetos</a>
+      <a class="btn ghost" href="https://github.com/LuizAssing" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <section id="sobre" class="reveal">
+    <h2>Sobre mim</h2>
+    <div class="about-grid">
+      <p style="color:var(--text-dim); max-width:640px;">
+        Curso Engenharia de Software e estou no segundo período. Gosto de entender como as
+        coisas funcionam por baixo — o que veio da minha base em C e C++ — e agora direciono
+        esse interesse para a web. Uso este repositório como portfólio vivo: cada projeto aqui
+        representa um passo prático no que estou aprendendo.
+      </p>
+      <ul class="fact-list">
+        <li>Cursando Engenharia de Software (2º período)</li>
+        <li>Base em C e C++ (nível básico)</li>
+        <li>Foco atual: desenvolvimento web com PHP</li>
+        <li>Objetivo: stack full-stack com Laravel</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="stack" class="reveal">
+    <h2>Stack &amp; Aprendizado</h2>
+    <div class="skills-cols">
+      <div class="skill-card">
+        <h3><span class="dot now"></span>Estudando agora</h3>
+        <div class="chips">
+          <span class="chip">PHP (base)</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="dot next"></span>Próximos passos</h3>
+        <div class="chips">
+          <span class="chip">JavaScript</span>
+          <span class="chip">PHP avançado</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Laravel</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><span class="dot base"></span>Já conheço</h3>
+        <div class="chips">
+          <span class="chip">C (básico)</span>
+          <span class="chip">C++ (básico)</span>
+          <span class="chip">Git &amp; GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="reveal">
+    <h2>Projetos</h2>
+    <div class="proj-grid">
+
+      <article class="proj placeholder">
+        <div class="ico">🌐</div>
+        <h3>Nome do projeto</h3>
+        <p>Descreva em 1–2 frases o que o projeto faz e qual problema resolve. Substitua este card pelo seu primeiro projeto.</p>
+        <div class="stack"><span>PHP</span><span>HTML</span><span>CSS</span></div>
+        <div class="links">
+          <a href="#">Código</a>
+          <a href="#">Demo</a>
+        </div>
+      </article>
+
+      <article class="proj placeholder">
+        <div class="ico">🧮</div>
+        <h3>Nome do projeto</h3>
+        <p>Um projeto pequeno também conta: uma calculadora, um CRUD simples, um jogo em C. Mostre o processo.</p>
+        <div class="stack"><span>C++</span></div>
+        <div class="links">
+          <a href="#">Código</a>
+        </div>
+      </article>
+
+      <article class="proj placeholder">
+        <div class="ico">📚</div>
+        <h3>Nome do projeto</h3>
+        <p>Conforme avançar, adicione projetos com JavaScript, SQL e Laravel. A ideia é a linha do tempo contar sua evolução.</p>
+        <div class="stack"><span>JavaScript</span><span>SQL</span></div>
+        <div class="links">
+          <a href="#">Código</a>
+          <a href="#">Demo</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="jornada" class="reveal">
+    <h2>Jornada de estudos</h2>
+    <ul class="timeline">
+      <li>
+        <span class="when">Agora — 2026</span>
+        <h3>Fundamentos web + PHP</h3>
+        <p>HTML, CSS e lógica de back-end com PHP. Primeiros projetos publicados neste portfólio.</p>
+      </li>
+      <li>
+        <span class="when">Próximo</span>
+        <h3>JavaScript &amp; banco de dados</h3>
+        <p>Interatividade no front-end com JavaScript e modelagem/consultas com SQL.</p>
+      </li>
+      <li>
+        <span class="when">Meta</span>
+        <h3>PHP avançado + Laravel</h3>
+        <p>Aplicações completas com o framework Laravel: rotas, ORM, autenticação e APIs.</p>
+      </li>
+      <li>
+        <span class="when">Em paralelo</span>
+        <h3>Engenharia de Software</h3>
+        <p>Graduação em andamento — estruturas de dados, algoritmos e boas práticas de projeto.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contato" class="reveal">
+    <h2>Contato</h2>
+    <p style="color:var(--text-dim);">Aberto a trocar ideias, feedback e oportunidades de estágio.</p>
+    <div class="contact-links">
+      <a href="https://github.com/LuizAssing" target="_blank" rel="noopener">💻 GitHub</a>
+      <a href="mailto:luiz.smartflow@gmail.com">✉️ E-mail</a>
+      <a href="#" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Luiz Assing · Feito com HTML e CSS · <a href="https://github.com/LuizAssing/RepositorioPessoal">código deste site</a>
+  </div>
+</footer>
+
+<script>
+  // menu mobile
+  var btn = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', false); }
+  });
+
+  // ano no rodapé
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // reveal ao rolar
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('show'); obs.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+</script>
+
+</body>
+</html>
